@@ -1,7 +1,7 @@
 
 # binary-heap
 
-  Binary heap
+  [Binary heap](http://en.wikipedia.org/wiki/Binary_heap)
 
 ## Installation
 
@@ -9,9 +9,31 @@
 
     $ component install code42day/binary-heap
 
+## Usage
+
+```
+  var h = heap();
+  h.push(5);
+  h.push(2);
+
+  h.pop(); // 2
+  h.pop(); // 5
+  h.pop(); // undefined
+```
+
 ## API
 
+###heap(fn)
 
+`fn` - compare function, by default numerical comparison resulting in `min-heap`, see tests for `max-heap` example
+
+###push(item)
+
+adds `item` to the heap
+
+###pop()
+
+pops item from the top of the heap, rebalances the head
 
 ## License
 
