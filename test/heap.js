@@ -106,5 +106,19 @@ describe('heap', function() {
     h.get().should.eql([]);
   });
 
+  it('should know its size when empty', function() {
+    heap().size().should.eql(0);
+  });
+
+  it('should know its size with elements', function() {
+    var h = heap();
+
+    h.push(5);
+    h.push(0);
+    h.push(5);
+
+
+    h.size().should.eql(3);
+  });
 
 });

@@ -65,6 +65,10 @@ function heap(compare) {
     return root;
   }
 
+  function size() {
+    return data.length - 1;
+  }
+
   function get() {
     return data.slice(1);
   }
@@ -72,6 +76,7 @@ function heap(compare) {
   return {
     push: push,
     pop: pop,
+    size: size,
     get: get
   };
 }
