@@ -1,5 +1,5 @@
 
-# heap
+# binary-heap
 
   Binary heap
 
@@ -7,7 +7,7 @@
 
   Install with [component(1)](http://component.io):
 
-    $ component install code42day/heap
+    $ component install code42day/binary-heap
 
 ## API
 
@@ -17,7 +17,7 @@
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 <copyright holders>
+  Copyright (c) 2014 <copyright code42day>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal

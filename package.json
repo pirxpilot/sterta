@@ -1,5 +1,5 @@
 {
-  "name": "code42day-heap",
+  "name": "code42day-binary-heap",
   "version": "0.0.0",
   "description": "Binary heap",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/code42day/heap.git"
+    "url": "https://github.com/code42day/binary-heap.git"
   },
   "keywords": [
     "heap",
@@ -18,9 +18,9 @@
   "author": "Damian Krzeminski <pirxpilot@code42day.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/code42day/heap/issues"
+    "url": "https://github.com/code42day/binary-heap/issues"
   },
-  "homepage": "https://github.com/code42day/heap",
+  "homepage": "https://github.com/code42day/binary-heap",
   "devDependencies": {
     "jshint": "^2.5.2",
     "mocha": "^1.21.3",
