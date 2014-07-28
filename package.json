@@ -1,6 +1,6 @@
 {
   "name": "code42day-binary-heap",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Binary heap",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/code42day/binary-heap",
   "devDependencies": {
-    "jshint": "^2.5.2",
-    "mocha": "^1.21.3",
-    "should": "^4.0.4"
+    "jshint": "~2",
+    "mocha": "~1",
+    "should": "~4"
   }
 }
