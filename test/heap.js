@@ -121,4 +121,18 @@ describe('heap', function() {
     h.size().should.eql(3);
   });
 
+  it('should remove items', function() {
+    var i, h = heap();
+
+    for (i = 9; i > 0; i--) {
+      h.push(i);
+    }
+
+    h.remove(7);
+    h.get().should.eql([1, 2, 4, 3, 6, 8, 5, 9]);
+
+    h.remove(2);
+    h.get().should.eql([ 1, 3, 4, 9, 6, 8, 5]);
+  });
+
 });

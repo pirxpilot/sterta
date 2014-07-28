@@ -73,10 +73,27 @@ function heap(compare) {
     return data.slice(1);
   }
 
+  function remove(item) {
+    var fn, index = data.indexOf(item);
+
+    if (index < 0) {
+      return;
+    }
+    if (index === data.length - 1) {
+      data.pop();
+      return;
+    }
+
+    fn = smaller(data.length - 1, index) ? up : down;
+    data[index] = data.pop();
+    fn(data, smaller, index);
+  }
+
   return {
     push: push,
     pop: pop,
     size: size,
+    remove: remove,
     get: get
   };
 }
