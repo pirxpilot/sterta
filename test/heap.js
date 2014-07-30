@@ -60,7 +60,7 @@ describe('heap', function() {
 
   it('should sort items with custom comparison function', function() {
     var h = heap(function(a, b) {
-      return b -a;
+      return b - a;
     });
 
     h.push(5);
@@ -133,6 +133,21 @@ describe('heap', function() {
 
     h.remove(2);
     h.get().should.eql([ 1, 3, 4, 9, 6, 8, 5]);
+  });
+
+  it('should rebuild with new data', function() {
+    var hmin, hmax;
+
+    hmin = heap().rebuild([5, 6, 1, 0, 18, -3, 6]);
+    hmin.get().should.eql([-3, 0, 1, 6, 18, 5, 6]);
+
+    hmin.rebuild();
+    hmin.get().should.eql([-3, 0, 1, 6, 18, 5, 6]);
+
+    hmax = heap(function(a, b) {
+      return b - a;
+    }).rebuild([5, 6, 1, 0, 18, -3, 6]);
+    hmax.get().should.eql([18, 6, 6, 0, 5, -3, 1]);
   });
 
 });

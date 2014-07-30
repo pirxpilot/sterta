@@ -38,7 +38,7 @@ function down(heap, smaller, index) {
 }
 
 function heap(compare) {
-  var data = [null]; // 1-index
+  var self, data = [null]; // 1-index
 
   compare = compare || function(a, b) { return a - b; };
 
@@ -89,11 +89,29 @@ function heap(compare) {
     fn(data, smaller, index);
   }
 
-  return {
+  function rebuild(initData) {
+    var i;
+
+    if (Array.isArray(initData)) {
+      data = [null].concat(initData);
+      rebuild();
+    }
+
+    for(i = Math.floor(data.length / 2); i > 0; i--) {
+      down(data, smaller, i);
+    }
+
+    return self;
+  }
+
+  self = {
     push: push,
     pop: pop,
     size: size,
+    rebuild: rebuild,
     remove: remove,
     get: get
   };
+
+  return self;
 }

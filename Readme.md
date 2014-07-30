@@ -35,6 +35,10 @@ adds `item` to the heap
 
 pops item from the top of the heap, rebalances the head
 
+###rebuild(data)
+
+rebuilds heap to satisfy comparison constraint, if `data` is provided it is used to reinitialize the heap
+
 ## License
 
   The MIT License (MIT)
