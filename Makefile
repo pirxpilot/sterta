@@ -1,4 +1,7 @@
 NODE_BIN=./node_modules/.bin
+PROJECT=binary-heap
+
+all: check compile
 
 check: lint test
 
@@ -8,13 +11,19 @@ lint:
 test:
 	$(NODE_BIN)/mocha --require should test
 
-build: components index.js
-	@component build --dev
+compile: build/build.js
 
-components: component.json
-	@component install --dev
+build/build.js: node_modules index.js
+	mkdir -p build
+	browserify --require ./index.js:$(PROJECT) --outfile $@
+
+node_modules: package.json
+	npm install && touch $@
 
 clean:
-	rm -fr build components
+	rm -fr build
 
-.PHONY: clean lint check test
+distclean: clean
+	rm -fr node_modules
+
+.PHONY: clean distclean lint check all compile test
