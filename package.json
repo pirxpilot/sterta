@@ -25,5 +25,8 @@
     "jshint": "~2",
     "mocha": "~1",
     "should": "~4"
-  }
+  },
+  "files": [
+    "index.js"
+  ]
 }
