@@ -23,8 +23,8 @@
   "homepage": "https://github.com/code42day/binary-heap",
   "devDependencies": {
     "jshint": "~2",
-    "mocha": "~1",
-    "should": "~4"
+    "mocha": "~3",
+    "should": "~11"
   },
   "files": [
     "index.js"
