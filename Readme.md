@@ -26,9 +26,11 @@ $ npm install --save conde42day-binary-heap
 
 ## API
 
-### `heap(fn)`
+### `heap(fn, heapIndex)`
 
 `fn` - compare function, by default numerical comparison resulting in `min-heap`, see tests for `max-heap` example
+`heapIndex` - if truthy, heap will use item's `_heapIndex` property to track its position on the heap, it speeds up item removals, but can slow down operations for smaller heaps
+
 
 ### `push(item)`
 
