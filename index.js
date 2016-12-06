@@ -65,6 +65,10 @@ function heap(compare) {
     return root;
   }
 
+  function peek() {
+    return data[1];
+  }
+
   function size() {
     return data.length - 1;
   }
@@ -90,25 +94,32 @@ function heap(compare) {
   }
 
   function rebuild(initData) {
-    var i;
-
     if (Array.isArray(initData)) {
       data = [null].concat(initData);
-      rebuild();
     }
 
-    for(i = Math.floor(data.length / 2); i > 0; i--) {
-      down(data, smaller, i);
+    var i = Math.floor(data.length / 2);
+    while(i > 0) {
+      down(data, smaller, i--);
     }
 
     return self;
   }
 
+  function popAndRebuild() {
+    data.shift();
+    rebuild();
+    return data[0];
+  }
+
+
   self = {
     push: push,
     pop: pop,
+    peek: peek,
     size: size,
     rebuild: rebuild,
+    popAndRebuild: popAndRebuild,
     remove: remove,
     get: get
   };

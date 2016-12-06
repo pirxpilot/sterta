@@ -84,12 +84,14 @@ describe('heap', function() {
     h.push(6);
     h.get().should.eql([18, 6, 6, 0, 5, -3, 1]);
 
+    h.peek().should.eql(18);
     h.pop().should.eql(18);
     h.get().should.eql([6, 5, 6, 0, 1, -3]);
 
     h.pop().should.eql(6);
     h.get().should.eql([6, 5, -3, 0, 1]);
 
+    h.peek().should.eql(6);
     h.pop().should.eql(6);
     h.get().should.eql([5, 1, -3, 0]);
 
@@ -150,4 +152,20 @@ describe('heap', function() {
     hmax.get().should.eql([18, 6, 6, 0, 5, -3, 1]);
   });
 
+  describe('popAndRebuild', function() {
+    it('should rebuild heap after pop', function() {
+      var items = [5, 6, 18, -3, 14, 9].map(function(f) {
+        return { f: f };
+      });
+      function compare(a, b) { return a.f - b.f; }
+
+      var hmin = heap(compare).rebuild(items);
+
+      // change weight
+      items[2].f = -10;
+
+      hmin.popAndRebuild().should.eql({ f: -3 });
+      hmin.peek().should.be.exactly(items[2]);
+    });
+  });
 });
