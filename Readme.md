@@ -1,3 +1,6 @@
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
 
 # binary-heap
 
@@ -5,9 +8,9 @@
 
 ## Installation
 
-  Install with [component(1)](http://component.io):
-
-    $ component install code42day/binary-heap
+```sh
+$ npm install --save conde42day-binary-heap
+```
 
 ## Usage
 
@@ -23,42 +26,31 @@
 
 ## API
 
-###heap(fn)
+### `heap(fn)`
 
 `fn` - compare function, by default numerical comparison resulting in `min-heap`, see tests for `max-heap` example
 
-###push(item)
+### `push(item)`
 
 adds `item` to the heap
 
-###pop()
+### `pop()`
 
 pops item from the top of the heap, rebalances the head
 
-###rebuild(data)
+### `rebuild(data)`
 
 rebuilds heap to satisfy comparison constraint, if `data` is provided it is used to reinitialize the heap
 
 ## License
 
-  The MIT License (MIT)
+MIT © [code42day](https://code42day.com)
 
-  Copyright (c) 2014 <copyright code42day>
+[npm-image]: https://img.shields.io/npm/v/code42day-binary-heap.svg
+[npm-url]: https://npmjs.org/package/code42day-binary-heap
 
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
+[travis-url]: https://travis-ci.org/code42day/binary-heap
+[travis-image]: https://img.shields.io/travis/code42day/binary-heap.svg
 
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-  THE SOFTWARE.
+[gemnasium-image]: https://img.shields.io/gemnasium/code42day/binary-heap.svg
+[gemnasium-url]: https://gemnasium.com/code42day/binary-heap
