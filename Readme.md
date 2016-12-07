@@ -38,9 +38,19 @@ adds `item` to the heap
 
 pops item from the top of the heap, rebalances the head
 
+### `peek()`
+
+returns the top of the heap, without removing it
+
 ### `rebuild(data)`
 
 rebuilds heap to satisfy comparison constraint, if `data` is provided it is used to reinitialize the heap
+
+### `popAndRebuild()`
+
+pop and immediately rebuild the heap, implemented in a slightly more efficient manner than separate `pop()` and
+`rebuild()`- useful when heap needs to be rebalanced after top is removed, because some of the items might have changed
+their relative weights
 
 ## License
 
