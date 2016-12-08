@@ -1,26 +1,30 @@
 module.exports = heap;
 
 
-function swap(heap, p, q) {
+function swap(heap, p, q, heapIndex) {
   var t = heap[p];
   heap[p] = heap[q];
   heap[q] = t;
+  if (heapIndex) {
+    heap[p]._heapIndex = p;
+    heap[q]._heapIndex = q;
+  }
 }
 
 
-function up(heap, smaller, index) {
+function up(heap, smaller, index, heapIndex) {
   if (index <= 1) {
     return;
   }
 
   var parent = Math.floor(index / 2);
   if (smaller(index, parent)) {
-    swap(heap, parent, index);
-    up(heap, smaller, parent);
+    swap(heap, parent, index, heapIndex);
+    up(heap, smaller, parent, heapIndex);
   }
 }
 
-function down(heap, smaller, index) {
+function down(heap, smaller, index, heapIndex) {
   var left = 2 * index,
     right = left + 1,
     next = index;
@@ -32,12 +36,12 @@ function down(heap, smaller, index) {
     next = right;
   }
   if (next !== index) {
-    swap(heap, index, next);
-    down(heap, smaller, next);
+    swap(heap, index, next, heapIndex);
+    down(heap, smaller, next, heapIndex);
   }
 }
 
-function heap(compare) {
+function heap(compare, heapIndex) {
   var self, data = [null]; // 1-index
 
   compare = compare || function(a, b) { return a - b; };
@@ -48,7 +52,10 @@ function heap(compare) {
 
   function push(item) {
     data.push(item);
-    up(data, smaller, data.length - 1);
+    if (heapIndex) {
+      item._heapIndex = data.length - 1;
+    }
+    up(data, smaller, data.length - 1, heapIndex);
   }
 
   function pop() {
@@ -60,7 +67,10 @@ function heap(compare) {
       data.length = 1;
     } else {
       data[1] = data.pop();
-      down(data, smaller, 1);
+      if (heapIndex) {
+        data[1]._heapIndex = 1;
+      }
+      down(data, smaller, 1, heapIndex);
     }
     return root;
   }
@@ -78,7 +88,9 @@ function heap(compare) {
   }
 
   function remove(item) {
-    var fn, index = data.indexOf(item);
+    var fn, index;
+
+    index = heapIndex ? item._heapIndex : data.indexOf(item);
 
     if (index < 0) {
       return;
@@ -90,7 +102,10 @@ function heap(compare) {
 
     fn = smaller(data.length - 1, index) ? up : down;
     data[index] = data.pop();
-    fn(data, smaller, index);
+    if (heapIndex) {
+      data[index]._heapIndex = index;
+    }
+    fn(data, smaller, index, heapIndex);
   }
 
   function rebuild(initData) {
@@ -101,6 +116,13 @@ function heap(compare) {
     var i = Math.floor(data.length / 2);
     while(i > 0) {
       down(data, smaller, i--);
+    }
+    if (heapIndex) {
+      data.forEach(function(item, i) {
+        if (i > 0) {
+          item._heapIndex = i;
+        }
+      });
     }
 
     return self;

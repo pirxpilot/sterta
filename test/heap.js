@@ -123,18 +123,43 @@ describe('heap', function() {
     h.size().should.eql(3);
   });
 
-  it('should remove items', function() {
-    var i, h = heap();
+  describe('remove', function() {
+    it('should remove items', function() {
+      var i, h = heap();
 
-    for (i = 9; i > 0; i--) {
-      h.push(i);
-    }
+      for (i = 9; i > 0; i--) {
+        h.push(i);
+      }
 
-    h.remove(7);
-    h.get().should.eql([1, 2, 4, 3, 6, 8, 5, 9]);
+      h.remove(7);
+      h.get().should.eql([1, 2, 4, 3, 6, 8, 5, 9]);
 
-    h.remove(2);
-    h.get().should.eql([ 1, 3, 4, 9, 6, 8, 5]);
+      h.remove(2);
+      h.get().should.eql([ 1, 3, 4, 9, 6, 8, 5]);
+    });
+
+    it('should remove items when heap index is used', function() {
+      var items = [5, 6, 18, -3, 14, 9].map(function(f) {
+        return { f: f };
+      });
+      function compare(a, b) { return a.f - b.f; }
+
+      var hmin = heap(compare, true).rebuild(items);
+
+      hmin.get().forEach(function(item, i) {
+        item._heapIndex.should.eql(i + 1);
+      });
+
+      hmin.remove(items[3]);
+      hmin.remove(items[4]);
+
+      hmin.pop().should.be.exactly(items[0]);
+
+      hmin.get().forEach(function(item, i) {
+        item._heapIndex.should.eql(i + 1);
+      });
+    });
+
   });
 
   it('should rebuild with new data', function() {
