@@ -1,6 +1,6 @@
 {
   "name": "code42day-binary-heap",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Binary heap",
   "main": "index.js",
   "scripts": {
