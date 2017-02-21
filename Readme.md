@@ -56,13 +56,13 @@ their relative weights
 
 ## License
 
-MIT © [code42day](https://code42day.com)
+MIT © [Damian Krzeminski](https://pirxpilot.me)
 
-[npm-image]: https://img.shields.io/npm/v/code42day-binary-heap.svg
-[npm-url]: https://npmjs.org/package/code42day-binary-heap
+[npm-image]: https://img.shields.io/npm/v/sterta.svg
+[npm-url]: https://npmjs.org/package/sterta
 
-[travis-url]: https://travis-ci.org/code42day/binary-heap
-[travis-image]: https://img.shields.io/travis/code42day/binary-heap.svg
+[travis-url]: https://travis-ci.org/pirxpilot/sterta
+[travis-image]: https://img.shields.io/travis/pirxpilot/sterta.svg
 
-[gemnasium-image]: https://img.shields.io/gemnasium/code42day/binary-heap.svg
-[gemnasium-url]: https://gemnasium.com/code42day/binary-heap
+[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/sterta.svg
+[gemnasium-url]: https://gemnasium.com/pirxpilot/sterta
