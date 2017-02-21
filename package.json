@@ -1,6 +1,6 @@
 {
   "name": "sterta",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Binary heap",
   "main": "index.js",
   "scripts": {
