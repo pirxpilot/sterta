@@ -1,9 +1,6 @@
-var heap = require('..');
+var { describe, it } = require('node:test');
 var should = require('should');
-
-
-/* global describe, it */
-
+var heap = require('..');
 
 describe('heap', function() {
   it('should be empty after init', function() {
