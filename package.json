@@ -6,10 +6,7 @@
   "scripts": {
     "test": "make check"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pirxpilot/sterta.git"
-  },
+  "repository": "github:pirxpilot/sterta",
   "keywords": [
     "heap",
     "data",
@@ -19,9 +16,8 @@
   "license": "MIT",
   "homepage": "https://github.com/pirxpilot/sterta",
   "devDependencies": {
-    "jshint": "~2",
-    "mocha": "~3",
-    "should": "~11"
+    "@pirxpilot/jshint": "~3",
+    "should": "~13"
   },
   "files": [
     "index.js"

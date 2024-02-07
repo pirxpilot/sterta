@@ -1,6 +1,6 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][gemnasium-image]][gemnasium-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][deps-image]][deps-url]
 
 # binary-heap
 
@@ -58,11 +58,11 @@ their relative weights
 
 MIT © [Damian Krzeminski](https://pirxpilot.me)
 
-[npm-image]: https://img.shields.io/npm/v/sterta.svg
+[npm-image]: https://img.shields.io/npm/v/sterta
 [npm-url]: https://npmjs.org/package/sterta
 
-[travis-url]: https://travis-ci.org/pirxpilot/sterta
-[travis-image]: https://img.shields.io/travis/pirxpilot/sterta.svg
+[build-url]: https://github.com/pirxpilot/sterta/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/sterta/check.yaml?branch=main
 
-[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/sterta.svg
-[gemnasium-url]: https://gemnasium.com/pirxpilot/sterta
+[deps-image]: https://img.shields.io/librariesio/release/npm/sterta
+[deps-url]: https://libraries.io/npm/sterta

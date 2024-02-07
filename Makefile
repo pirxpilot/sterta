@@ -1,29 +1,21 @@
 NODE_BIN=./node_modules/.bin
 PROJECT=binary-heap
 
-all: check compile
+all: check
 
 check: lint test
 
-lint:
+lint: | node_modules
 	$(NODE_BIN)/jshint index.js test
 
-test:
-	$(NODE_BIN)/mocha --require should test
-
-compile: build/build.js
-
-build/build.js: node_modules index.js
-	mkdir -p build
-	browserify --require ./index.js:$(PROJECT) --outfile $@
+test: | node_modules
+	node --require should --test
 
 node_modules: package.json
-	npm install && touch $@
+	yarn
+	touch $@
 
-clean:
-	rm -fr build
-
-distclean: clean
+distclean:
 	rm -fr node_modules
 
-.PHONY: clean distclean lint check all compile test
+.PHONY: distclean lint check all test
