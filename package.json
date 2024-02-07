@@ -19,7 +19,7 @@
   "license": "MIT",
   "homepage": "https://github.com/pirxpilot/sterta",
   "devDependencies": {
-    "jshint": "~2",
+    "@pirxpilot/jshint": "~3",
     "mocha": "~3",
     "should": "~11"
   },
