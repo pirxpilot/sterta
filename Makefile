@@ -6,7 +6,10 @@ all: check
 check: lint test
 
 lint: | node_modules
-	$(NODE_BIN)/jshint index.js test
+	$(NODE_BIN)/biome ci
+
+format: | node_modules
+	$(NODE_BIN)/biome check --fix
 
 test: | node_modules
 	node --test
@@ -18,4 +21,4 @@ node_modules: package.json
 distclean:
 	rm -fr node_modules
 
-.PHONY: distclean lint check all test
+.PHONY: distclean format lint check all test

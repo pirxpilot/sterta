@@ -39,9 +39,8 @@ function down(heap, smaller, index, heapIndex) {
   }
 }
 
-function heap(compare, heapIndex) {
+function heap(compare = (a, b) => a - b, heapIndex = false) {
   let data = [null]; // 1-index
-  compare ||= (a, b) => a - b; // jshint ignore:line
 
   const self = {
     push,
