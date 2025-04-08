@@ -9,7 +9,7 @@ lint: | node_modules
 	$(NODE_BIN)/jshint index.js test
 
 test: | node_modules
-	node --require should --test
+	node --test
 
 node_modules: package.json
 	yarn
