@@ -1,5 +1,3 @@
-module.exports = heap;
-
 function swap(heap, p, q, heapIndex) {
   const t = heap[p];
   heap[p] = heap[q];
@@ -39,7 +37,7 @@ function down(heap, smaller, index, heapIndex) {
   }
 }
 
-function heap(compare = (a, b) => a - b, heapIndex = false) {
+export default function heap(compare = (a, b) => a - b, heapIndex = false) {
   let data = [null]; // 1-index
 
   const self = {

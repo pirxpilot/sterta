@@ -2,7 +2,7 @@
   "name": "sterta",
   "version": "2.2.2",
   "description": "Binary heap",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "make check"
   },

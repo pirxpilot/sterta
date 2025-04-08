@@ -1,5 +1,5 @@
-const { describe, it } = require('node:test');
-const heap = require('..');
+import { describe, it } from 'node:test';
+import heap from '../index.js';
 
 describe('heap', function () {
   it('should be empty after init', t => {
