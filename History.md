@@ -1,4 +1,11 @@
 
+3.0.0 / 2025-04-08
+==================
+
+ * transition to ESM
+ * use `biome` instead of `jshint`
+ * use built-in `node:assert` instead of `should`
+
 2.2.2 / 2024-02-07
 ==================
 
