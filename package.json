@@ -6,7 +6,10 @@
   "scripts": {
     "test": "make check"
   },
-  "repository": "github:pirxpilot/sterta",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/sterta.git"
+  },
   "keywords": [
     "heap",
     "data",
