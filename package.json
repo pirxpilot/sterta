@@ -2,7 +2,7 @@
   "name": "sterta",
   "version": "3.0.1",
   "description": "Binary heap",
-  "main": "index.js",
+  "exports": "./index.js",
   "type": "module",
   "scripts": {
     "test": "make check"
@@ -20,7 +20,7 @@
   "license": "MIT",
   "homepage": "https://github.com/pirxpilot/sterta",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "2.4.4"
   },
   "files": [
     "index.js"

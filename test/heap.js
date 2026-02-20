@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import heap from '../index.js';
 
-describe('heap', function () {
+describe('heap', () => {
   it('should be empty after init', t => {
     t.assert.deepEqual(heap().get(), []);
     t.assert.equal(heap().pop(), undefined);
@@ -115,7 +115,7 @@ describe('heap', function () {
     t.assert.deepEqual(h.size(), 3);
   });
 
-  describe('remove', function () {
+  describe('remove', () => {
     it('should remove items', t => {
       const h = heap();
 
@@ -131,9 +131,7 @@ describe('heap', function () {
     });
 
     it('should remove items when heap index is used', t => {
-      const items = [5, 6, 18, -3, 14, 9].map(function (f) {
-        return { f };
-      });
+      const items = [5, 6, 18, -3, 14, 9].map(f => ({ f }));
 
       function compare(a, b) {
         return a.f - b.f;
@@ -141,7 +139,7 @@ describe('heap', function () {
 
       const hmin = heap(compare, true).rebuild(items);
 
-      hmin.get().forEach(function (item, i) {
+      hmin.get().forEach((item, i) => {
         t.assert.deepEqual(item._heapIndex, i + 1);
       });
 
@@ -150,7 +148,7 @@ describe('heap', function () {
 
       t.assert.equal(hmin.pop(), items[0]);
 
-      hmin.get().forEach(function (item, i) {
+      hmin.get().forEach((item, i) => {
         t.assert.deepEqual(item._heapIndex, i + 1);
       });
     });
@@ -163,13 +161,11 @@ describe('heap', function () {
     hmin.rebuild();
     t.assert.deepEqual(hmin.get(), [-3, 0, 1, 6, 18, 5, 6]);
 
-    const hmax = heap(function (a, b) {
-      return b - a;
-    }).rebuild([5, 6, 1, 0, 18, -3, 6]);
+    const hmax = heap((a, b) => b - a).rebuild([5, 6, 1, 0, 18, -3, 6]);
     t.assert.deepEqual(hmax.get(), [18, 6, 6, 0, 5, -3, 1]);
   });
 
-  describe('popAndRebuild', function () {
+  describe('popAndRebuild', () => {
     it('should rebuild heap after pop', t => {
       const items = [5, 6, 18, -3, 14, 9].map(f => ({ f }));
 

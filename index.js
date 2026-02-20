@@ -121,7 +121,7 @@ export default function heap(compare = (a, b) => a - b, heapIndex = false) {
       down(data, smaller, i--);
     }
     if (heapIndex) {
-      data.forEach(function (item, i) {
+      data.forEach((item, i) => {
         if (i > 0) {
           item._heapIndex = i;
         }
